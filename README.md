@@ -8,9 +8,15 @@ Give it Float32 audio samples and a sample rate; get back BPM, musical key,
 and a confidence rating for each. No native modules, no WASM, no model
 download, no network.
 
+Not on the npm registry — install it straight from GitHub:
+
 ```bash
-npm install bpm-key-detect
+npm install github:Utilumo/bpm-key-detect
 ```
+
+`dist/` is not committed, so the package builds itself on install via its
+`prepare` script. Works with npm, pnpm and yarn; Bun needs `bun add
+github:Utilumo/bpm-key-detect`. To pin a version, append a tag: `#v0.1.0`.
 
 Extracted from the [Song Analyzer](https://utilumo.com/audio/song-analyzer) on
 [Utilumo](https://utilumo.com), where it runs in a Web Worker in the browser and
