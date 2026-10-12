@@ -1,0 +1,57 @@
+{
+  "name": "bpm-key-detect",
+  "version": "0.1.0",
+  "description": "Detect tempo (BPM) and musical key with Camelot notation from raw PCM audio. Zero dependencies, runs in the browser and in Node.",
+  "keywords": [
+    "bpm",
+    "tempo",
+    "beat-detection",
+    "key-detection",
+    "musical-key",
+    "camelot",
+    "chroma",
+    "autocorrelation",
+    "dsp",
+    "audio-analysis",
+    "pcm",
+    "web-audio"
+  ],
+  "license": "MIT",
+  "author": "Utilumo",
+  "homepage": "https://github.com/Utilumo/bpm-key-detect",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Utilumo/bpm-key-detect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Utilumo/bpm-key-detect/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}
